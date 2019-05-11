@@ -9,55 +9,76 @@
     <TextView
         android:id="@+id/main_status"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="19dp"
         android:layout_margin="@dimen/margin"
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:text="@string/main_status_disconnected"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
         android:id="@+id/main_progress"
+        style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="10dp"
         android:layout_margin="@dimen/margin"
+        android:layout_marginTop="60dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/main_status"
-        style="?android:attr/progressBarStyleHorizontal" />
+        app:layout_constraintTop_toTopOf="@id/main_status" />
 
     <ListView
         android:id="@+id/main_logview"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_margin="@dimen/margin"
-        app:layout_constraintBottom_toTopOf="@id/main_button"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/soundButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/main_progress" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_progress" />
+
+    <Button
+        android:id="@+id/soundButton"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+
+
+        android:layout_marginStart="8dp"
+        android:onClick="onClickSoundButton"
+        android:text="tap"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/main_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
     <EditText
         android:id="@+id/main_input"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="@dimen/margin"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
         android:hint="@string/main_input_hint"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/main_button"
-        app:layout_constraintTop_toBottomOf="@id/main_logview" />
+        app:layout_constraintEnd_toStartOf="@+id/main_button"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/main_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin"
+        android:layout_marginEnd="8dp"
         android:onClick="onClickSendButton"
         android:text="@string/main_button_label"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/main_input"
         app:layout_constraintEnd_toEndOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
